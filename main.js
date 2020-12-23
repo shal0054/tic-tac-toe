@@ -6,8 +6,22 @@ let playerTwo = document.querySelector('#playerTwo');
 let pOneTurn = document.querySelector('#playerOne p');
 let pTwoTurn = document.querySelector('#playerTwo p');
 
-let xTiles = [];
-let oTiles =[];
+let xTiles = {
+   t: 0,
+   m: 0,
+   b: 0,
+   '1': 0,
+   '2': 0,
+   '3': 0
+}
+let oTiles = {
+   t: 0,
+   m: 0,
+   b: 0,
+   '1': 0,
+   '2': 0,
+   '3': 0
+}
 
 function init(ev) {
    turn = 'x';
@@ -23,18 +37,42 @@ function tileClick(ev) {
    let xio = ev.target.children[0];
    let oio = ev.target.children[1];
    let occupied = ev.target.dataset.occupied;
+   let tileID = ev.target.getAttribute('id');
 
    if (turn === 'x' && !occupied) {
       xio.classList.remove('off');
       ev.target.setAttribute('data-occupied', 'x');
-      xTiles.push(ev.target.getAttribute('id'));
+      trackScore(tileID);
       changeTurns();
    } else if (!occupied) {
       oio.classList.remove('off');
       ev.target.setAttribute('data-occupied', 'o');
-      oTiles.push(ev.target.getAttribute('id'));
+      trackScore(tileID);
       changeTurns();
    } else console.log('Tile Occupied');
+}
+
+function trackScore(tileID) {
+   if (turn === 'x') {
+      if (tileID[0] === 't') xTiles.t += 1;
+      else if (tileID[0] === 'm') xTiles.m += 1;
+      else if (tileID[0] === 'b') xTiles.b += 1;
+
+      if (tileID[1] === '1') xTiles['1'] += 1;
+      else if (tileID[1] === '2') xTiles['2'] += 1;
+      if (tileID[1] === '3') xTiles['3'] += 1;
+      checkForWin('x');
+   } else {
+      if (tileID[0] === 't') oTiles.t += 1;
+      else if (tileID[0] === 'm') oTiles.m += 1;
+      else if (tileID[0] === 'b') oTiles.b += 1;
+
+      if (tileID[1] === '1') oTiles['1'] += 1;
+      else if (tileID[1] === '2') oTiles['2'] += 1;
+      if (tileID[1] === '3') oTiles['3'] += 1;
+      checkForWin('o');
+
+   }
 }
 
 function changeTurns() {
@@ -42,31 +80,21 @@ function changeTurns() {
       turn = 'o';
       playerOne.classList.add('fadeOut');
       playerTwo.classList.remove('fadeOut');
-
       pOneTurn.classList.add('off');
-
       pTwoTurn.classList.remove('off');
-
-      checkForWin('x');
    } else {
       turn = 'x';
       playerOne.classList.remove('fadeOut');
       playerTwo.classList.add('fadeOut');
-
       pOneTurn.classList.remove('off');
-
       pTwoTurn.classList.add('off');
-      checkForWin('o');
    }
 }
 
 function checkForWin(xo) {
    if (xo === 'x') {
-      if (xTiles.length > 2) {
-
-      }
-   } else {
-      if (oTiles.length > 2) {
+      if (Object.values(xTiles).includes(3)) {
+         // X won
          
       }
    }

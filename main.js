@@ -94,9 +94,27 @@ function changeTurns() {
 function checkForWin(xo) {
    if (xo === 'x') {
       if (Object.values(xTiles).includes(3)) {
-         // X won
-         
+         // x won
+
+         displayLine();
+      }
+   } else {
+      if (Object.values(oTiles).includes(3)) {
+         // o won
+
+         displayLine();
       }
    }
 
 }
+
+function displayLine() {
+   // display line across winning set
+}
+
+// create diagonal win
+// create modal for winning (replay button)
+// css: fireworks for win
+// after win, remove listener from game board.
+// create line to go over winning line
+// animate win line

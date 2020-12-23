@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>TIC TAC TOE</title>
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+   <link rel="stylesheet" href="./main.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" defer></script>
+   <script src="./main.js" defer></script>
+</head>
+
+<body>
+
+   <div id="title" class="center-align">
+      <h1 class="red-text">TIC TAC TOE</h1>
+   </div>
+
+   <main>
+
+      <div id="playerOne" class="player">
+         <img src="https://img.icons8.com/nolan/96/delete-sign.png" />
+         <p class="center">Your Turn</p>
+      </div>
+
+      <div class="game-board">
+         <div id="t1" data-occupied="" class="tile valign-wrapper">&nbsp;&nbsp;&nbsp;
+            <img class="off x" src="https://img.icons8.com/nolan/96/delete-sign.png" />
+            <img class="off o" src="https://img.icons8.com/ultraviolet/96/000000/circled.png" />
+         </div>
+         <div id="t2" data-occupied="" class="tile valign-wrapper">&nbsp;&nbsp;&nbsp;
+            <img class="off x" src="https://img.icons8.com/nolan/96/delete-sign.png" />
+            <img class="off o" src="https://img.icons8.com/ultraviolet/96/000000/circled.png" />
+         </div>
+         <div id="t3" data-occupied="" class="tile valign-wrapper">&nbsp;&nbsp;&nbsp;
+            <img class="off x" src="https://img.icons8.com/nolan/96/delete-sign.png" />
+            <img class="off o" src="https://img.icons8.com/ultraviolet/96/000000/circled.png" />
+         </div>
+         <div id="m1" data-occupied="" class="tile valign-wrapper">&nbsp;&nbsp;&nbsp;
+            <img class="off x" src="https://img.icons8.com/nolan/96/delete-sign.png" />
+            <img class="off o" src="https://img.icons8.com/ultraviolet/96/000000/circled.png" />
+         </div>
+         <div id="m2" data-occupied="" class="tile valign-wrapper">&nbsp;&nbsp;&nbsp;
+            <img class="off x" src="https://img.icons8.com/nolan/96/delete-sign.png" />
+            <img class="off o" src="https://img.icons8.com/ultraviolet/96/000000/circled.png" />
+         </div>
+         <div id="m3" data-occupied="" class="tile valign-wrapper">&nbsp;&nbsp;&nbsp;
+            <img class="off x" src="https://img.icons8.com/nolan/96/delete-sign.png" />
+            <img class="off o" src="https://img.icons8.com/ultraviolet/96/000000/circled.png" />
+         </div>
+         <div id="b1" data-occupied="" class="tile valign-wrapper">&nbsp;&nbsp;&nbsp;
+            <img class="off x" src="https://img.icons8.com/nolan/96/delete-sign.png" />
+            <img class="off o" src="https://img.icons8.com/ultraviolet/96/000000/circled.png" />
+         </div>
+         <div id="b2" data-occupied="" class="tile valign-wrapper">&nbsp;&nbsp;&nbsp;
+            <img class="off x" src="https://img.icons8.com/nolan/96/delete-sign.png" />
+            <img class="off o" src="https://img.icons8.com/ultraviolet/96/000000/circled.png" />
+         </div>
+         <div id="b3" data-occupied="" class="tile valign-wrapper">&nbsp;&nbsp;&nbsp;
+            <img class="off x" src="https://img.icons8.com/nolan/96/delete-sign.png" />
+            <img class="off o" src="https://img.icons8.com/ultraviolet/96/000000/circled.png" />
+         </div>
+      </div>
+
+      <div id="playerTwo" class="player fadeOut">
+         <img src="https://img.icons8.com/ultraviolet/96/000000/circled.png" />
+         <p class="center off">Your Turn</p>
+      </div>
+
+   </main>
+
+   <div class="center">
+      <a id="resetBtn" class="waves-effect waves-light btn-large">Reset</a>
+   </div>
+
+</body>
+
+</html>
